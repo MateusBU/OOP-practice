@@ -39,7 +39,9 @@ export class Person{
     }
 
     getAge(){
-        let birth = new Date(this.#birthdayDate);
+        let hour = "00:00"
+        let birhtFullDate = this.getBirthdayDate() + " " + hour;
+        let birth = new Date(birhtFullDate);
         let today = new Date();
         let age = today.getFullYear() - birth.getFullYear(); 
         
@@ -60,4 +62,6 @@ export class Person{
     }
 }
 
-//var person1 = new Person("Mateus BU", "Engineer", "Post Graduation", "1997-02-05", "123.456.789-74", "98523-125");
+var person1 = new Person("Mateus BU", "Engineer", "Post Graduation", "1997-01-01", "123.456.789-74", "98523-125");
+
+console.log(person1.getAge());
